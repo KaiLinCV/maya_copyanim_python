@@ -6,9 +6,14 @@ This is a Python script for Autodesk Maya that lets you **copy animation keyfram
 
 By streamlining this process, the tool helps improve workflow efficiency, especially when working with characters that share similar rig structures or naming conventions.
 
-> ✅ Supports nested controllers  
-> ✅ Works with or without namespaces  
-> ✅ User-friendly UI for selecting source and target roots
+---
+
+## Goals for creating this script
+
+- Ability to copy animation from the source to the target through the use of controllers.
+- Select nested controllers in both the source and target controller rigs.  
+- Works with or without namespaces.  
+- Create a simple user-friendly UI to run the script 
 
 ---
 
