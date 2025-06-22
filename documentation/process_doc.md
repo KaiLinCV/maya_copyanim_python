@@ -33,13 +33,13 @@ type='transform' -> Limits the result to only transform nodes, filtering out sha
 "or []" -> Ensures `all_descendants` is set to an empty list if no descendants are found, preventing runtime errors.
 
 Let’s say I have the following controller hierarchy in Maya:
-![Controllers](./screenshots/step1_ctrl_sample.png)
+![Controllers](../screenshots/step1_ctrl_sample.png)
 
 To test what this command does, I wrote a small script:
-![Code](./screenshots/step1_ctrl_sample_code.png)
+![Code](../screenshots/step1_ctrl_sample_code.png)
 
 When I select the root controller and run the script, the output looks like this:
-![Result](./screenshots/step1_ctrl_sample_result.png)
+![Result](../screenshots/step1_ctrl_sample_result.png)
 
 As you can see, the result is a list of the objects inside the hierarchy of the selected root. The list includes full DAG paths, which can make it look long, but it’s useful for ensuring the script interacts with the exact intended nodes.  
 
@@ -120,12 +120,12 @@ To test if the function works correctly, I created two sets of controllers in Ma
 
 You can see the setup and test script below:
 
-![Controllers](./screenshots/step2_map_controllers.png)
-![Script](./screenshots/step2_map_script.png)
+![Controllers](../screenshots/step2_map_controllers.png)
+![Script](../screenshots/step2_map_script.png)
 
 The result was:
 
-![Result](./screenshots/step2_map_result.png)
+![Result](../screenshots/step2_map_result.png)
 
 
 The result confirms that the `map_controllers()` function works as intended. Each controller from the source list is correctly matched with its counterpart in the target list, and the mapping is stored in a dictionary.
@@ -195,9 +195,9 @@ This function is now much more reliable, even when working with characters refer
 
 To test this change, I created two character hierarchies in Maya with namespaces applied (`charA:root_ctrl`, `charB:root_ctrl`).  I ran the updated script and confirmed that the controller names were still matched correctly, even though their full names in the scene had different prefixes.
 
-![Controllers](./screenshots/step3_namespace_controllers.png)
-![Script](./screenshots/step3_namespace_script.png)
-![Result](./screenshots/step3_namespace_result.png)
+![Controllers](../screenshots/step3_namespace_controllers.png)
+![Script](../screenshots/step3_namespace_script.png)
+![Result](../screenshots/step3_namespace_result.png)
 
 The result showed that all controllers were correctly paired across namespaces, and animation data transferred as expected.
 
@@ -310,7 +310,7 @@ def copy_animation(source_root, target_root):
 
 To test this, I selected two root nodes — one for the source character and one for the target. I then called copy_animation() with those two as arguments. The animation on the source was successfully transferred to the target.
 
-![Result](./screenshots/step5_copyanim_result.gif)
+![Result](../screenshots/step5_copyanim_result.gif)
 
 Everything worked as expected: controllers were matched correctly, existing keyframes on the target were cleared, and new animation was pasted cleanly.
 
@@ -360,7 +360,7 @@ The `"Copy Animation"` button triggers the `on_copy_button()` function, which ch
 def on_copy_button():
     selection = cmds.ls(selection=True)
     if len(selection) != 2:
-        cmds.warning("❗ Please select exactly 2 character root nodes: source, then target.")
+        cmds.warning("! Please select exactly 2 character root nodes: source, then target.")
         return
 
     source_root, target_root = selection
@@ -370,7 +370,7 @@ def on_copy_button():
 
 With the `show_animation_transfer_ui()` and the `on_copy_button()` functions done, the tool is now ready to be used! All that is left is to add the `show_animation_transfer_ui()` to the last line of the script, add it to the Maya Shelf, and be used when needed.
 
-![Result](./screenshots/step6_UI_result.gif)
+![Result](../screenshots/step6_UI_result.gif)
 
 ---
 
