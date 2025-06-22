@@ -341,11 +341,11 @@ The UI is made up of the following elements:
 
 Here's the code for the UI Function:
 ```python
-def show_animation_transfer_ui():
-    if cmds.window("animTransferUI", exists=True):
-        cmds.deleteUI("animTransferUI")
+def show_copy_anim_ui():
+    if cmds.window("copyAnimUI", exists=True):
+        cmds.deleteUI("copyAnimUI")
 
-    window = cmds.window("animTransferUI", title="Animation Transfer Tool", widthHeight=(350, 80), sizeable=True)
+    window = cmds.window("copyAnimUI", title="Copy Animation Tool", widthHeight=(350, 80), sizeable=True)
     cmds.columnLayout(adjustableColumn=True, rowSpacing=10, columnAlign='center', columnAttach=('both', 20))
 
     cmds.text(label="Select Source and Target Root Nodes in the Viewport", align='center')
