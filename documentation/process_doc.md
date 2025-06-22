@@ -33,12 +33,15 @@ type='transform' -> Limits the result to only transform nodes, filtering out sha
 "or []" -> Ensures `all_descendants` is set to an empty list if no descendants are found, preventing runtime errors.
 
 Let’s say I have the following controller hierarchy in Maya:
+
 ![Controllers](../screenshots/step1_ctrl_sample.png)
 
 To test what this command does, I wrote a small script:
+
 ![Code](../screenshots/step1_ctrl_sample_code.png)
 
 When I select the root controller and run the script, the output looks like this:
+
 ![Result](../screenshots/step1_ctrl_sample_result.png)
 
 As you can see, the result is a list of the objects inside the hierarchy of the selected root. The list includes full DAG paths, which can make it look long, but it’s useful for ensuring the script interacts with the exact intended nodes.  
@@ -121,6 +124,7 @@ To test if the function works correctly, I created two sets of controllers in Ma
 You can see the setup and test script below:
 
 ![Controllers](../screenshots/step2_map_controllers.png)
+
 ![Script](../screenshots/step2_map_script.png)
 
 The result was:
@@ -196,7 +200,9 @@ This function is now much more reliable, even when working with characters refer
 To test this change, I created two character hierarchies in Maya with namespaces applied (`charA:root_ctrl`, `charB:root_ctrl`).  I ran the updated script and confirmed that the controller names were still matched correctly, even though their full names in the scene had different prefixes.
 
 ![Controllers](../screenshots/step3_namespace_controllers.png)
+
 ![Script](../screenshots/step3_namespace_script.png)
+
 ![Result](../screenshots/step3_namespace_result.png)
 
 The result showed that all controllers were correctly paired across namespaces, and animation data transferred as expected.
