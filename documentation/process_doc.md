@@ -376,7 +376,7 @@ With the `show_animation_transfer_ui()` and the `on_copy_button()` functions don
 
 ## Conclusion and Reflection
 
-I was worked through a repetitive and time consuming task at my job, I had a spark of an idea to create a script for it, which was to make it easier to copy and paste animation from one character rig to another using Python in Maya. What began as a small utility evolved into a fully functional and flexible tool that handles naming conventions, namespaces, and user interaction through a UI.
+As I worked through a repetitive and time consuming task at my job, I had a spark of an idea to create a script for it, which was to make it easier to copy and paste animation from one character rig to another using Python in Maya. What began as a small utility evolved into a fully functional and flexible tool that handles naming conventions, namespaces, and user interaction through a UI.
 
 Throughout the process, I learned a lot about how Maya structures its scene data and how to build tools that work with real-world production constraints. Here are a few key takeaways from this project:
 
@@ -389,7 +389,7 @@ Throughout the process, I learned a lot about how Maya structures its scene data
 
 #### Final thoughts
 
-This script has already helped me automate what would normally be a repetitive, manual task in animation workflows. More importantly, it taught me how to think about tool design in a practical way.
+This script helped me automate what would normally be a repetitive, manual task in animation workflows. More importantly, it taught me how to think about tool design in a practical way.
 
 By breaking the problem into smaller parts and building it step by step (controller gathering, name mapping, animation transfer, UI), I was able to debug and test each piece before putting everything together. This modular approach made the final script easier to maintain and expand.
 
